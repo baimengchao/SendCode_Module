@@ -3,6 +3,7 @@
   
 ##功能配置及启用
 
+
   opt : {
         Element_phone: '.phone',    //手机号码输入框（input），class或id
         GetPass_button: '.button',  //获取验证码按钮，
@@ -13,9 +14,7 @@
             $.ajax({
                 url:'',
                 type:'get',
-                data: {
-
-                },
+                data: {},
                 success: function(data){
                     fn(data);
                 }
