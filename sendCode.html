@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css"  href="weui.min.css">
+    <link rel="stylesheet" type="text/css"  href="sendCode.css"> 
+    
+</head>
+<body>
+    <div id="PhoneGetPass">
+        <input class="phone" placeholder="请输入手机号"/>
+        <input class="code" placeholder="请输入验证码"/>
+        <span class="getPass">获取验证码</span>
+    </div>
+    <div id="loadingToast" style="display:none;">
+        <div class="weui-mask_transparent"></div>
+        <div class="weui-toast">
+            <i class="weui-loading weui-icon_toast"></i>
+            <p class="weui-toast__content" style="color: #fff;">数据加载中</p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="sendCode.js"></script>
+<script>
+    var opt = {
+        Element_phone: '.phone',    //手机号码输入框（input），class或id
+        GetPass_button: '.getPass',  //获取验证码按钮，
+        time_all: 6,   //每次计时的时间默认60s
+        count: 3,   //设置发送多少次之后不再发送，默认3
+        ClickAfterFunc: function(fn){ //点击获取验证码要执行的ajax
+            // $.ajax({
+            //     url:'',
+            //     type:'get',
+            //     data: {
+
+            //     },
+            //     success: function(data){
+            var data = {'error': 'success'}
+                    fn(data);
+            //     }
+            // })
+        }
+    }
+    sendCode.init(opt);
+</script>
+</html>
